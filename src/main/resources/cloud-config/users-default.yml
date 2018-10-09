@@ -1,0 +1,15 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/SICMX001?useSSL=false
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: validate
+
+flyway:
+  password: ${FLYWAY_SERVICE_CATALOG_PASSWORD:${spring.datasource.password}}
+  user: ${FLYWAY_SERVICE_CATALOG_USER:${spring.datasource.username}}
+  url: ${FLYWAY_SERVICE_CATALOG:${spring.datasource.url}}
