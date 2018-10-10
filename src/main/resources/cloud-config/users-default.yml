@@ -10,6 +10,6 @@ spring:
       ddl-auto: validate
 
 flyway:
-  password: ${FLYWAY_SERVICE_CATALOG_PASSWORD:${spring.datasource.password}}
-  user: ${FLYWAY_SERVICE_CATALOG_USER:${spring.datasource.username}}
-  url: ${FLYWAY_SERVICE_CATALOG:${spring.datasource.url}}
+  password: ${FLYWAY_API_USERS_PASSWORD:${spring.datasource.password}}
+  user: ${FLYWAY_API_USERS_USER:${spring.datasource.username}}
+  url: ${FLYWAY_API_USERS_URL:${spring.datasource.url}}
