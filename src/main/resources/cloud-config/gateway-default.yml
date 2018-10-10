@@ -10,3 +10,7 @@ zuul:
       path: /test/**
       serviceId: test-contract
       stripPrefix: false
+    users:
+      path: /users/**
+      serviceId: users
+      stripPrefix: false
