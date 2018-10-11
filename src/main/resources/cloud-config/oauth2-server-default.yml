@@ -9,10 +9,18 @@ spring:
       ddl-auto: true
     show-sql: true
 
+mybatis:
+  type-aliases-package: com.gaidar.model
+  mapperLocations: classpath*:**/mappers/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+    default-fetch-size: 100
+    default-statement-timeout: 30
+
 flyway:
-  url: jdbc:mysql://localhost:3306/users_db
-  password: root
-  user: root
+  password: ${FLYWAY_API_USERS_PASSWORD:${spring.datasource.password}}
+  user: ${FLYWAY_API_USERS_USER:${spring.datasource.username}}
+  url: ${FLYWAY_API_USERS_URL:${spring.datasource.url}}
 
 logging:
   level:
