@@ -1,0 +1,36 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZoneDomain: ${EUREKA_DISCOVERY_SERVER_URI_PEERS}
+      defaultZone: ${eureka.client.serviceUrl.defaultZoneDomain}:8761/eureka/
+
+ribbon:
+  ConnectTimeout: 20000
+  ReadTimeout: 20000
+
+logging:
+  pattern:
+    console: "%date %clr(%-5level) %X{projectVersion} [%15thread] %cyan(%logger{15}) : %msg %n"
+  level:
+    com:
+      gaidar:
+        '': INFO
+
+endpoints:
+  enabled: false
+  health:
+    enabled: true
+
+spring:
+  datasource:
+    test-on-borrow: true
+    remove-abandoned: true
+    validation-query: SELECT 1
+    validation-interval: 30000
+    maximum-pool-size: 60
+    time-between-eviction-runs-millis: 30000
+    max-idle: 15
+    initial-size: 5
+    min-idle: 5
+    test-while-idle: true
+    min-evictable-idle-time-millis: 60000
