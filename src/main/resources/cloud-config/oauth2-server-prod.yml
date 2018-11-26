@@ -22,3 +22,9 @@ logging:
   level:
     com:
       gaidar: debug
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

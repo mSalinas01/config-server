@@ -1,7 +1,7 @@
 eureka:
   client:
     serviceUrl:
-      defaultZoneDomain: ${EUREKA_DISCOVERY_SERVER_URI_PEERS}
+      defaultZoneDomain: ${EUREKA_DISCOVERY_SERVER_URI_PEERS:http://172.31.63.68}
       defaultZone: ${eureka.client.serviceUrl.defaultZoneDomain}:8761/eureka/
 
 ribbon:
