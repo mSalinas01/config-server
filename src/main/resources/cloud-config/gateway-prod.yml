@@ -1,0 +1,16 @@
+zuul:
+  ignoredServices: '*'
+  sensitiveHeaders: Cookie,Set-Cookie
+  routes:
+    oauth:
+      path: /oauth/**
+      serviceId: oauth2-server
+      stripPrefix: false
+    account:
+      path: /test/**
+      serviceId: test-contract
+      stripPrefix: false
+    users:
+      path: /users/**
+      serviceId: users
+      stripPrefix: false
