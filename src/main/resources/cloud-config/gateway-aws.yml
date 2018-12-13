@@ -1,6 +1,7 @@
-spring:
-  cloud:
-    gateway:
+zuul:
+  ignoredServices: '*'
+  #sensitiveHeaders: Cookie,Set-Cookie,Authorization
+  sensitiveHeaders:
   routes:
     oauth:
       path: /oauth/**
