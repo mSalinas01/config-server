@@ -8,6 +8,11 @@ zuul:
       sensitiveHeaders:
       serviceId: oauth2-server
       stripPrefix: false
+    oauth-users:
+      path: /users/**
+      sensitiveHeaders:
+      serviceId: oauth2-server
+      stripPrefix: false
     account:
       path: /test/**
       serviceId: test-contract
