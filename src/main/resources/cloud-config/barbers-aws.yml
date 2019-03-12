@@ -1,0 +1,24 @@
+spring:
+  datasource:
+    url: ${BARBERS_API_URL}/barbers_db?useSSL=false
+    username: ${BARBERS_API_USER}
+    password: ${BARBERS_API_PASSWORD}
+    driverClassName: com.mysql.jdbc.Driver
+
+mybatis:
+  type-aliases-package: com.gaidar.model
+  mapperLocations: classpath*:**/mappers/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+    default-fetch-size: 100
+    default-statement-timeout: 30
+
+flyway:
+  password: ${FLYWAY_API_USERS_PASSWORD:${spring.datasource.password}}
+  user: ${FLYWAY_API_USERS_USER:${spring.datasource.username}}
+  url: ${FLYWAY_API_USERS_URL:${spring.datasource.url}}
+
+logging:
+  level:
+    com:
+      gaidar: debug
