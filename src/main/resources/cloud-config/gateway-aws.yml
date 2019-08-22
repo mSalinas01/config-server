@@ -13,11 +13,6 @@ zuul:
       sensitiveHeaders:
       serviceId: oauth2-server
       stripPrefix: false
-    oauth-roles:
-      path: /roles/**
-      sensitiveHeaders:
-      serviceId: oauth2-server
-      stripPrefix: false
     barbers:
       path: /barbers/**
       serviceId: barbers
