@@ -2,12 +2,26 @@ spring:
   datasource:
     url: jdbc:mysql://localhost:3306/barbers_db?useSSL=false
     username: root
-    password: root
+    password: Admin&02
     driverClassName: com.mysql.jdbc.Driver
   jpa:
     hibernate:
       ddl-auto: true
     show-sql: true
+  mail:
+    default-encoding: UTF-8
+    host: smtp.zoho.com
+    username: no-reply@zamacueca.com
+    password: n0R3pl4y&
+    port: 587
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+    protocol: smtp
+    test-connection: false
 
 mybatis:
   type-aliases-package: com.gaidar.model

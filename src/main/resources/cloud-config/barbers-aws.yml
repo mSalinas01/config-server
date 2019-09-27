@@ -4,6 +4,20 @@ spring:
     username: ${BARBERS_API_USER}
     password: ${BARBERS_API_PASSWORD}
     driverClassName: com.mysql.jdbc.Driver
+  mail:
+    default-encoding: UTF-8
+    host: smtp.zoho.com
+    username: no-reply@zamacueca.com
+    password: n0R3pl4y&
+    port: 587
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+    protocol: smtp
+    test-connection: false
 
 mybatis:
   type-aliases-package: com.gaidar.model
