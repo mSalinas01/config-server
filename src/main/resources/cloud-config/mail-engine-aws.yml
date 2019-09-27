@@ -1,0 +1,20 @@
+spring:
+  mail:
+    default-encoding: UTF-8
+    host: smtp.zoho.com
+    username: no-reply@zamacueca.com
+    password: n0R3pl4y&
+    port: 587
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+    protocol: smtp
+    test-connection: false
+
+logging:
+  level:
+    com:
+      gaidar: debug
