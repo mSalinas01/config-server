@@ -1,10 +1,10 @@
 spring:
   mail:
     default-encoding: UTF-8
-    host: smtp.zoho.com
-    username: no-reply@zamacueca.com
-    password: n0R3pl4y&
-    port: 587
+    host: ${MAILENGINE_API_HOST}
+    username: ${MAILENGINE_API_USER}
+    password: ${MAILENGINE_API_PASSWORD}
+    port: ${MAILENGINE_API_PORT}
     properties:
       mail:
         smtp:
@@ -18,3 +18,14 @@ logging:
   level:
     com:
       gaidar: debug
+
+cloud:
+  aws:
+    credentials:
+      accessKey : AKIAI5RGIYGAPFPSHVIA
+      secretKey : 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
+    region: us-west-1
+    s3:
+      bucket: images-zamacueca-prod
+    stack:
+      auto: false

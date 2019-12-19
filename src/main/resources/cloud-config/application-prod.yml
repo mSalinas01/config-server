@@ -10,7 +10,7 @@ ribbon:
 
 logging:
   pattern:
-    console: "%date %clr(%-5level) %X{projectVersion} [%15thread] %cyan(%logger{15}) : %msg %n"
+    console: "%date %clr(%-5level) [%25thread] %cyan(%logger{15}) : %msg %n"
   level:
     com:
       gaidar:
@@ -34,3 +34,9 @@ spring:
     min-idle: 5
     test-while-idle: true
     min-evictable-idle-time-millis: 60000
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
