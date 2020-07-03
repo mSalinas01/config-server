@@ -15,5 +15,11 @@ zuul:
       stripPrefix: false
     barbers:
       path: /barbers/**
+      sensitiveHeaders:
+      serviceId: barbers
+      stripPrefix: false
+    shops:
+      path: /shops/**
+      sensitiveHeaders:
       serviceId: barbers
       stripPrefix: false
