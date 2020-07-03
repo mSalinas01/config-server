@@ -17,3 +17,7 @@ zuul:
       path: /barbers/**
       serviceId: barbers
       stripPrefix: false
+    shops:
+      path: /shops/**
+      serviceId: barbers
+      stripPrefix: false
