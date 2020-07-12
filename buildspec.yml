@@ -6,12 +6,10 @@ env:
     IMAGE_TAG: "latest"
 
 phases:
-  install:
-    runtime-versions:
-      docker: 18
   pre_build:
     commands:
       - echo Logging in to Amazon ECR...
+      - $(aws ecr get-login --region $AWS_DEFAULT_REGION --no-include-email)
   build:
     commands:
       - echo Build Gradle started on `date`
