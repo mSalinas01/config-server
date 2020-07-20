@@ -2,7 +2,8 @@ package com.gaidar.config;
 
 import com.netflix.appinfo.AmazonInfo;
 
-import org.apache.logging.slf4j.SLF4JLogger;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
@@ -28,9 +29,17 @@ public class EurekaInstanceConfig {
     public EurekaInstanceConfigBean eurekaInstanceConfigBean(InetUtils inetUtils) {
         EurekaInstanceConfigBean config = new EurekaInstanceConfigBean(inetUtils);
         AmazonInfo info = AmazonInfo.Builder.newBuilder().autoBuild("eureka");
+        String ip = null;
+        try {
+            ip = InetAddress.getLocalHost().getHostAddress();
+            logger.debug("ip {}", ip);
+        } catch (UnknownHostException exception) {
+            logger.error("UnknownHostException: ",exception);
+        }
         config.setDataCenterInfo(info);
         config.setNonSecurePort(serverPort);
         config.setPreferIpAddress(true);
+        config.setIpAddress(ip);
         config.setInstanceId(config.getIpAddress() + ":" + serverPort);
         logger.info("aws info: {}",info.toString());
         return config;
