@@ -40,10 +40,10 @@ logging:
 cloud:
   aws:
     credentials:
-      accessKey : AKIAI5RGIYGAPFPSHVIA
-      secretKey : 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
+      accessKey : ${ACCESS_KEY_API}
+      secretKey : ${SECRET_KEY_API}
     region: us-west-1
     s3:
-      bucket: images-zamacueca-prod
+      bucket: ${BUCKET_NAME}
     stack:
       auto: false
