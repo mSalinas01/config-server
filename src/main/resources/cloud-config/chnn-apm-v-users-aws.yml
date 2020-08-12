@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    url: ${APM_V_USERS_API_URL}/appartame_db?useSSL=false&serverTimezone=UTC
+    username: ${APM_V_USERS_API_USER}
+    password: ${APM_V_USERS_API_PASSWORD}
+
+flyway:
+  password: ${FLYWAY_API_USERS_PASSWORD:${spring.datasource.password}}
+  user: ${FLYWAY_API_USERS_USER:${spring.datasource.username}}
+  url: ${FLYWAY_API_USERS_URL:${spring.datasource.url}}

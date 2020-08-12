@@ -4,43 +4,24 @@ eureka:
       defaultZoneDomain: http://localhost
       defaultZone: ${eureka.client.serviceUrl.defaultZoneDomain}:8761/eureka/
 
-ribbon:
-  ConnectTimeout: 20000
-  ReadTimeout: 20000
+spring:
+  sleuth:
+    propagation-keys: uuid
+    log:
+      slf4j:
+        whitelisted-mdc-keys: uuid
+  jpa:
+    open-in-view: false
 
 logging:
   pattern:
-    console: "%date %clr(%-5level) [%25thread] %cyan(%logger{15}) : %msg %n"
+    level: "%5p [${spring.application.name:-},%X{X-B3-TraceId:-},%X{X-B3-SpanId:-},%X{X-Span-Export:-},%X{uuid:-}]"
   level:
-    org:
-      springframework:
-        ws:
-          client:
-            MessageTracing:
-              sent: TRACE
-              received: TRACE
     com:
-      netflix:
-        discovery: WARN
-      gaidar:
-        '': DEBUG
-
-spring:
-  datasource:
-    test-on-borrow: true
-    remove-abandoned: true
-    validation-query: SELECT 1
-    validation-interval: 30000
-    maximum-pool-size: 60
-    time-between-eviction-runs-millis: 30000
-    max-idle: 15
-    initial-size: 5
-    min-idle: 5
-    test-while-idle: true
-    min-evictable-idle-time-millis: 60000
+      appme: DEBUG
 
 management:
   endpoints:
     web:
       exposure:
-        include: "*"
+        include: '*'
