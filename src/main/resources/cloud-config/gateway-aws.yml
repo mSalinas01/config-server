@@ -6,20 +6,20 @@ zuul:
     oauth:
       path: /oauth/**
       sensitiveHeaders:
-      serviceId: oauth2-server
+      serviceId: chnn-apm-v-oauth
       stripPrefix: false
-    oauth-users:
+    users:
       path: /users/**
       sensitiveHeaders:
-      serviceId: oauth2-server
+      serviceId: chnn-apm-v-users
       stripPrefix: false
-    barbers:
-      path: /barbers/**
+    roles:
+      path: /roles/**
       sensitiveHeaders:
-      serviceId: barbers
+      serviceId: chnn-apm-v-users
       stripPrefix: false
-    shops:
-      path: /shops/**
+    client-details:
+      path: /clients-details/**
       sensitiveHeaders:
-      serviceId: barbers
+      serviceId: chnn-apm-v-users
       stripPrefix: false
