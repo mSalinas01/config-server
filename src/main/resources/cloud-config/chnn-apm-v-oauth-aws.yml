@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: ${APM_V_OAUTH_API_URL}/appartame_db?useSSL=false&serverTimezone=UTC
+    url: ${APM_V_OAUTH_API_URL}?useSSL=false&serverTimezone=UTC
     username: ${APM_V_OAUTH_API_USER}
     password: ${APM_V_OAUTH_API_PASSWORD}
 
